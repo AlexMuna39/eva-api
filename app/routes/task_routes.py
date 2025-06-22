@@ -1,15 +1,13 @@
 from fastapi import APIRouter
-from typing import List
-from app.models.task import Task
-from app.services import task_service
+from app.models.task_model import Task
+from app.services.task_service import TaskService
 
-router = APIRouter(prefix="/tasks", tags=["Tasks"])
+router = APIRouter()
 
-@router.get("/", response_model=List[Task])
+@router.get("/tasks", response_model=list[Task])
 def get_tasks():
-    return task_service.list_tasks()
+    return TaskService.list_tasks()
 
-@router.post("/", response_model=Task)
+@router.post("/tasks", response_model=Task)
 def create_task(task: Task):
-    new_task = task_service.add_task(task.dict())
-    return new_task
+    return TaskService.create_task(task)
