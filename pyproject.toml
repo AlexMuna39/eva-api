@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "eva-api"
+version = "0.1.0"
+description = "Eva's Task Assistant API"
+authors = ["AlexMuna39"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.0"
+uvicorn = {extras = ["standard"], version = "^0.27.1"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
