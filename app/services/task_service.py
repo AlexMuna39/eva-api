@@ -1,21 +1,14 @@
-from typing import List
-from datetime import datetime
-from app.models.task import Task
+from app.models.task_model import Task
 
-# In-memory database (temporary)
-tasks: List[Task] = []
+# Temporary in-memory storage
+tasks_db = []
 
-# Service functions
-def add_task(task_data: dict) -> Task:
-    task = Task(
-        id=len(tasks) + 1,
-        title=task_data["title"],
-        description=task_data.get("description"),
-        created_at=datetime.utcnow(),
-        completed=False
-    )
-    tasks.append(task)
-    return task
+class TaskService:
+    @staticmethod
+    def create_task(task: Task):
+        tasks_db.append(task)
+        return task
 
-def list_tasks() -> List[Task]:
-    return tasks
+    @staticmethod
+    def list_tasks():
+        return tasks_db
