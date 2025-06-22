@@ -1,6 +1,8 @@
 from fastapi import APIRouter
-from . import healthcheck
+from . import healthcheck, task_routes
 
 router = APIRouter()
 
-router.include_router(healthcheck.router, tags=["Healthcheck"])
+# Include all routers here
+router.include_router(healthcheck.router)
+router.include_router(task_routes.router)
