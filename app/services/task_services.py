@@ -1,4 +1,4 @@
-from app.models.task_model import Task
+from app.models.task_models import Task
 
 # Temporary in-memory storage
 tasks_db = []
