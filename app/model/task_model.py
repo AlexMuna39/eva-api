@@ -8,4 +8,3 @@ class Task(BaseModel):
     description: Optional[str] = None
     created_at: datetime
     completed: bool = False
-    
