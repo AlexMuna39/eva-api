@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from . import healthcheck, task_routes
+from app.routes import healthcheck, task_routes
 
 router = APIRouter()
 
