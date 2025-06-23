@@ -1,10 +1,8 @@
 from model.task_model import Task
 
-# Temporary in-memory storage
 tasks_db = []
 
 class TaskService:
-
     @staticmethod
     def create_task(task: Task):
         tasks_db.append(task)
