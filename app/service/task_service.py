@@ -1,14 +1,12 @@
 from app.model.task_model import Task
-
-# Temporary in-memory storage
-tasks_db = []
+from app.service.supabase_service import SupabaseService
 
 class TaskService:
+
     @staticmethod
     def create_task(task: Task):
-        tasks_db.append(task)
-        return task
+        return SupabaseService.create_task(task)
 
     @staticmethod
     def list_tasks():
-        return tasks_db
+        return SupabaseService.list_tasks()
