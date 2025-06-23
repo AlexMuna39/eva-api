@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
-from route import healthcheck
-from route import task_route
+from app.route import healthcheck
+from app.route import task_route
 
 app = FastAPI()
 app.include_router(healthcheck.router, prefix="/health")
